@@ -470,7 +470,7 @@ function getBoshyTime(guild) {
 }
 
 function isMod(member) {
-    if (member.roles.find("name", "Admin") || member.roles.find("name", "Moderator") || member.roles.find("name", "Super Admin") || member.roles.find("name", "Head Admin") || member.roles.find("name", "Super Head Admin") || member.roles.find("name", "Co-Owner") || member.roles.find("name", "Trial Moderator")) {
+    if (member.roles.find("name", "Admin") || member.roles.find("name", "Moderator") || member.roles.find("name", "Super Admin") || member.roles.find("name", "Head Admin") || member.roles.find("name", "Super Head Admin") || member.roles.find("name", "Co-Owner") || member.roles.find("name", "Trial Moderator") || member.roles.find("name","Owner")) {
         return true;
     } else {
         return false;
@@ -556,7 +556,7 @@ function messageChecker(oldMessage, newMessage) {
     }
     
     if (panicMode[message.guild.id]) {
-        if (msg == "mod:panic" && (message.member.roles.find("name", "Co-Owner")  || message.member.roles.find("name", "Super Head Admin"))) {
+        if (msg == "mod:panic" && (message.member.roles.find("name", "Co-Owner")  || message.member.roles.find("name", "Super Head Admin") || message.member.roles.find("name","Owner"))) {
             message.channel.send(':rotating_light: Panic mode is now off.');
             panicMode[message.guild.id] = false;
             console.log("[STATUS] Panic off.");
@@ -1319,7 +1319,7 @@ function messageChecker(oldMessage, newMessage) {
                         message.delete();
                         break;
                     case "panic":
-                        if (message.member.roles.find("name", "Co-Owner") || message.member.roles.find("name", "Super Head Admin")) {
+                        if (message.member.roles.find("name", "Co-Owner") || message.member.roles.find("name", "Super Head Admin") || message.member.roles.find("name","Owner")) {
                             message.channel.send(':rotating_light: Panic mode is now on. All message sending for this server has been turned off.').then(function() {
                                 panicMode[message.guild.id] = true;
                             });
