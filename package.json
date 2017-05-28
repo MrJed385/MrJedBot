@@ -1,0 +1,22 @@
+{
+  "name": "mrjedbot",
+  "version": "1.0.0",
+  "description": "A discord bot Based on AstralMod",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrjed385/MrJedBot.git"
+  },
+  "author": "MrJed385",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/mrjed385/MrJedBot/issues"
+  },
+  "dependencies": {
+    "discord.js": "^11.1.0",
+    "opusscript": "0.0.3"
+  }
+}
